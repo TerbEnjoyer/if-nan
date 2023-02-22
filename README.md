@@ -6,4 +6,4 @@
 5. if it is a number, run loop with as many iterations as input says.
 
 # how to run
-run ```bash node index.js```
+run ```node index.js```
