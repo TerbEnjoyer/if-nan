@@ -3,21 +3,21 @@ const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 });
-function run () {
-  readline.question('Say some number', Numb => {
-    let number = Number(Numb);
-  
-    if (isNaN(number)) {
-      console.log('Bledny input, wprowadz liczbe!');
-      run();
-    } else {
+
+function run() {
+  readline.question('Input some number: ', num => {
+    let number = Number(num);
+
+    if (!isNaN(number)) {
       for (let i = 0; i < number; i++) {
-        console.log("Iteracja")
+        console.log("iteration", i + 1)
         readline.close();
       }
+      return;
     }
-  
-    
+
+    console.log('Wrong input, provide a number!\n');
+    run();
   });
 }
 
